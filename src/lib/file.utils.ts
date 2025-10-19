@@ -16,7 +16,7 @@ const readFile = async (file: File): ReadFileResult => {
 
     const pages = Array.from({ length: pageCount }, (_, i) => ({
       pageNumber: i + 1,
-      keep: true,
+      keep: false,
     }));
 
     return { pages, buffer, ok: true };

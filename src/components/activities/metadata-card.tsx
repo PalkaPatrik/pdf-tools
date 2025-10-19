@@ -10,6 +10,9 @@ import { Input } from "../ui/input";
 export const FileMetadataCard = () => {
   const fileName = usePdfStore((state) => state.fileName);
   const setFileName = usePdfStore((state) => state.setFileName);
+  const pages = usePdfStore((state) => state.pages);
+
+  const pagesToKeep = pages.filter((page) => page.keep).length;
 
   const fileNameRef = useRef<HTMLInputElement>(null);
   const download = useDownload();
@@ -45,8 +48,12 @@ export const FileMetadataCard = () => {
           />
         </InputWrapper>
 
-        <Button icon={CloudArrowDownIcon} onClick={handleDownload}>
-          Download
+        <Button
+          icon={CloudArrowDownIcon}
+          onClick={handleDownload}
+          disabled={pagesToKeep === 0}
+        >
+          Download {pagesToKeep} page{pagesToKeep === 1 ? "" : "s"}
         </Button>
       </CardContent>
     </Card>

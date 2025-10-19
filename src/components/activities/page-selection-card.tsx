@@ -4,7 +4,13 @@ import { CheckIcon } from "lucide-react";
 import { useState } from "react"; // 1. Import useState
 import { Alert, AlertDescription } from "../ui/alert";
 import { Button } from "../ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 import { Spinner } from "../ui/spinner";
 import { Toggle } from "../ui/toggle";
 
@@ -61,6 +67,7 @@ export const PageSelectionCard = () => {
     <Card>
       <CardHeader>
         <CardTitle>{file?.name ?? "No file uploaded"}</CardTitle>
+        <CardDescription>Highlighted pages will be kept.</CardDescription>
       </CardHeader>
       <CardContent>
         {pages.length === 0 && !isLoading && (
