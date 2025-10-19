@@ -44,11 +44,13 @@ export const useDownload = () => {
       const newPdfBytes = await newPdfDoc.save();
 
       // Trigger the download
-      const originalName = file?.name?.replace(/\.pdf$/i, "");
-      const targetName =
-        originalName === fileName ? `${fileName}-ext` : fileName;
+      const targetName = file?.name === fileName ? `${fileName}-ext` : fileName;
 
-      download(newPdfBytes, `${targetName}.pdf`, "application/pdf");
+      download(
+        newPdfBytes,
+        `${targetName?.replace(/\.pdf$/i, "")}.pdf`,
+        "application/pdf",
+      );
     } catch (err) {
       console.error("Failed to create new PDF:", err);
       alert("An error occurred while creating the PDF.");

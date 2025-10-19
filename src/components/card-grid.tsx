@@ -8,9 +8,9 @@ export const CardGrid = ({
   right: ReactNode;
 }) => {
   return (
-    <div className="grid lg:grid-cols-4 gap-4">
-      <div className="col-span-1 flex flex-col gap-4">{left}</div>
-      <div className="col-span-3 flex flex-col gap-4">{right}</div>
+    <div className="grid lg:grid-cols-4 gap-4 mb-8">
+      <div className="lg:col-span-1 flex flex-col gap-4">{left}</div>
+      <div className="lg:col-span-3 flex flex-col gap-4">{right}</div>
     </div>
   );
 };

@@ -80,12 +80,18 @@ export const PageSelectionCard = () => {
 
         {pages.length > 0 && !isLoading && !isDownloading && (
           <>
-            <div className="flex gap-2 mb-4">
-              <Button variant="outline" onClick={handleSelectAll} size="sm">
+            <div className="flex gap-2 mb-4 w-full shrink">
+              <Button
+                variant="outline"
+                onClick={handleSelectAll}
+                size="sm"
+                className="w-1/2 lg:w-fit"
+              >
                 <CheckIcon className="mr-2 h-4 w-4" />
                 Select all
               </Button>
               <Button
+                className="w-1/2 lg:w-fit"
                 variant="outline"
                 onClick={handleClearSelection}
                 size="sm"
