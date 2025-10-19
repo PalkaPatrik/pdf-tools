@@ -1,4 +1,5 @@
 import {
+  BookmarkIcon,
   CheckIcon,
   CloudArrowDownIcon,
   DocumentIcon,
@@ -168,12 +169,17 @@ function App() {
   };
 
   return (
-    <div className="p-2">
-      <h1 className="font-bold text-3xl mb-4 text-center">
-        <span className="text-red-500">P</span>ee
-        <span className="text-red-500">D</span>eeE
-        <span className="text-red-500">f</span> tools
-      </h1>
+    <div className="p-2 px-4">
+      <header className="mb-4 flex justify-between items-center">
+        <h1 className="font-bold text-3xl">
+          <span className="text-red-500">P</span>ee
+          <span className="text-red-500">D</span>eeE
+          <span className="text-red-500">f</span> tools
+        </h1>
+        <Button size="sm" variant="ghost" icon={BookmarkIcon}>
+          <a href="https://github.com/Hopding/pdf-lib">@Hopding/pdf-lib</a>
+        </Button>
+      </header>
       <div className="grid grid-cols-3 gap-4 items-start">
         <Card>
           <CardHeader>
