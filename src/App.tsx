@@ -7,7 +7,8 @@ import { Skeleton } from "./components/ui/skeleton";
 import { usePdfStore } from "./lib/hooks/usePdfStore";
 
 function App() {
-  const { file, isLoading } = usePdfStore((state) => state);
+  const file = usePdfStore((state) => state.file);
+  const isLoading = usePdfStore((state) => state.isLoading);
 
   return (
     <PageWrapper>

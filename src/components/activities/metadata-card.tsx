@@ -8,7 +8,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Input } from "../ui/input";
 
 export const FileMetadataCard = () => {
-  const { fileName, setFileName } = usePdfStore((state) => state);
+  const fileName = usePdfStore((state) => state.fileName);
+  const setFileName = usePdfStore((state) => state.setFileName);
+
   const fileNameRef = useRef<HTMLInputElement>(null);
   const download = useDownload();
 

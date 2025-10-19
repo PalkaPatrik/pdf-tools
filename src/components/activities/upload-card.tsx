@@ -8,15 +8,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Input } from "../ui/input";
 
 export const FileUploadCard = () => {
-  const {
-    file,
-    setFile,
-    setIsLoading,
-    setFileBuffer,
-    setPages,
-    setError,
-    error,
-  } = usePdfStore((state) => state);
+  const file = usePdfStore((state) => state.file);
+  const setFile = usePdfStore((state) => state.setFile);
+  const setIsLoading = usePdfStore((state) => state.setIsLoading);
+  const setFileBuffer = usePdfStore((state) => state.setFileBuffer);
+  const setPages = usePdfStore((state) => state.setPages);
+  const setError = usePdfStore((state) => state.setError);
+  const error = usePdfStore((state) => state.error);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = async (e: ChangeEvent<HTMLInputElement>) => {
